@@ -1,1 +1,66 @@
 /* CSS declarations go here */
+
+/* Variable - Colors */
+.themeGreen {
+  color: #458B00;
+}.themeSilver {
+  color: #C0C0C0;
+}.themeWhite {
+  color: #FFFFFF;
+}
+/* Variable - Font-Sizes */
+
+/* Variable Font-Family */
+
+
+
+/* Start Base - General Defaults */
+
+
+/* End Base - General Defaults */
+
+
+
+/*Start -- Layout --  Sizing & Grids -- CSS*/
+
+body {
+  background-color: #C0C0C0;
+}
+
+.content {
+  background: #FFF;
+}
+.mainContent {
+  padding:2px;
+  overflow:hidden;
+}
+.wideBar {
+  width: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+/*End -- Layout --  Sizing & Grids -- CSS*/
+
+
+/*Start -- Modules -- Individual Parts of Page -- CSS*/
+.topBorder {
+  border-top: 2px solid black;
+}.btmBorder {
+  border-bottom: 2px solid black;
+}
+/*End -- Modules -- Individual Parts of Page -- CSS*/
+
+
+
+/* Start -- State -- Handling elements with multiple styles -- CSS*/
+
+/* End -- State -- Handling elements with multiple styles -- CSS*/
+
+
+
+/* Start -- Theme -- Look & Feel -- CSS*/
+
+/* End -- Theme -- Look & Feel -- CSS*/
