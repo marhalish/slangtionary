@@ -1,21 +1,63 @@
 /* CSS declarations go here */
 
 /* Variable - Colors */
-.themeGreen {
-  color: #458B00;
-}.themeSilver {
-  color: #C0C0C0;
-}.themeWhite {
-  color: #FFFFFF;
-}
+  .themeGreen {
+    color: #458B00;
+  }
+  .themeSilver {
+    color: #C0C0C0;
+  }
+  .themeWhite {
+    color: #FFFFFF;
+  }
 /* Variable - Font-Sizes */
+  .headFontSize {
 
+  }
 /* Variable Font-Family */
 
 
 
 /* Start Base - General Defaults */
 
+  /* Start Text Defaults */
+
+  /* End Text Defaults */
+
+  /* Start Position Defaults */
+    .hidden {
+    display:none;
+    }
+    .block{
+      display:block;
+    }
+    .in-block{
+      display:inline-block;
+    }
+  /* End Position Defaults */
+
+  /* Start Colors Defaults */
+    .black {
+      color:black
+    }
+    .bSilver{
+    background-color:#eee;
+    }
+    .red{
+      color:red!important;
+    }
+  /* End Colors Defaults */
+
+  /* Start Colors Defaults */
+    ul {
+      list-style-type:none;
+      margin:0;
+      padding:0;
+    }
+    label {
+    display: block;
+    }
+  /* End Colors Defaults */
 
 /* End Base - General Defaults */
 
@@ -23,40 +65,46 @@
 
 /*Start -- Layout --  Sizing & Grids -- CSS*/
 
-body {
-  background-color: #C0C0C0;
-}
+  body {
+    margin:0;
+    background-color: #C0C0C0;
+  }
 
-.content {
-  background: #FFF;
-}
-.mainContent {
-  padding:2px;
-  overflow:hidden;
-}
-.wideBar {
-  width: 100%;
-}
+  .content {
+    background: #FFF;
+  }
+  .mainContent {
+    background-color:#EEE;
+    min-height:900px;
+    padding:2px;
+    overflow:hidden;
+  }
+  .wideBar {
+    width: 100%;
+  }
 
-.center {
-  text-align: center;
-}
+  .center {
+    text-align: center;
+  }
 
 /*End -- Layout --  Sizing & Grids -- CSS*/
 
 
 /*Start -- Modules -- Individual Parts of Page -- CSS*/
-.topBorder {
-  border-top: 2px solid black;
-}.btmBorder {
-  border-bottom: 2px solid black;
-}
+  .topBorder {
+    border-top: 2px solid black;
+  }
+  .btmBorder {
+    border-bottom: 2px solid black;
+  }
 /*End -- Modules -- Individual Parts of Page -- CSS*/
 
 
 
 /* Start -- State -- Handling elements with multiple styles -- CSS*/
+  .submitBtn {
 
+  }
 /* End -- State -- Handling elements with multiple styles -- CSS*/
 
 
