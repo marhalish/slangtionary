@@ -1,5 +1,11 @@
-<template name="MainLayout">
-  <header>
-    <h1>Slangtionary</h1>
-  </header>
+<template name="mainLayout">
+  <div class="mainContent">
+    <h2> Welcome to Slangtionary! </h2>
+    <p> This project is currently under development. More information will be avilable soon</p>
+  </div>
+  <main>
+    {{> Template.dynamic template=appHeader }}
+    {{> Template.dynamic template=content }}
+    {{> Template.dynamic template=appFooter }}
+  </main>
 </template>
