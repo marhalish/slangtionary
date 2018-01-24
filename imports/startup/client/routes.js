@@ -2,6 +2,7 @@ import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
 //import to load these templates
+// When the imports below are commented out, no imports load in main.js
 //import '../imports/ui/pages/home.js';
 //import '../imports/ui/pages/about.js';
 //import '../imports/ui/pages/notFound.js';
@@ -28,6 +29,14 @@ FlowRouter.route('/about', {
   }
 });
 
+FlowRouter.route('*', {
+  action() {
+    BlazeLayout.render('notFound');
+  }
+});
+
+
+// The routes below will be uncommented when routing is functional
 /* FlowRouter.route('/contact', {
   name: 'contact',
   action() {
@@ -76,9 +85,3 @@ FlowRouter.route('/review', {
     this.render('Review')
   }
 }); */
-
-FlowRouter.route('*', {
-  action() {
-    BlazeLayout.render('notFound');
-  }
-});
