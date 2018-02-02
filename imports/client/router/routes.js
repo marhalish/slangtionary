@@ -1,16 +1,32 @@
+import { Meteor }     from 'meteor/meteor';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
-import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+//import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
 //import to load these templates
 // When the imports below are commented out, no imports load in main.js
-import '/imports/ui/layouts/mainLayout.js'
-import '/imports/ui/pages/home.js';
+//import '/imports/ui/layouts/mainLayout.js';
+//import '/imports/ui/pages/home.js';
+//import '/imports/client/loading/loading.html';
 //import '../imports/ui/pages/about.js';
 //import '../imports/ui/pages/notFound.js';
 //import '../imports/ui/pages/contact.js';
 
 // Create index route
 FlowRouter.route('/', {
+  name: 'home',
+  waitOn() {
+    return import('../imports/client/home/home.js');
+  },
+  whileWaiting() {
+    this.render('mainLayout', 'loading');
+  },
+  action() {
+    this.render('mainLayout', 'home');
+  }
+});
+
+// Create home route
+/*FlowRouter.route('/home', {
   name: 'home',
   waitOn() {
     return [
@@ -26,7 +42,7 @@ FlowRouter.route('/', {
     });
   }
 });
-/*FlowRouter.route('/', {
+FlowRouter.route('/', {
   name: 'home',
   action() {
     BlazeLayout.render('mainLayout', {
@@ -51,7 +67,7 @@ FlowRouter.route('/', {
 FlowRouter.route('/about', {
   name: 'about',
   action() {
-    BlazeLayout.render('mainLayout', {
+    this.render('mainLayout', {
       appHeader: 'appHeaderLayout',
       content: 'about',
       appFooter: 'appFooterLayout'
@@ -61,7 +77,7 @@ FlowRouter.route('/about', {
 
 FlowRouter.route('*', {
   action() {
-    BlazeLayout.render('notFound');
+    this.render('mainLayout', 'notFound');
   }
 });
 
