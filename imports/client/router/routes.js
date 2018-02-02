@@ -8,21 +8,29 @@ import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 //import '/imports/ui/pages/home.js';
 //import '/imports/client/loading/loading.html';
 //import '../imports/ui/pages/about.js';
+//import '/imports/client/misc/appHeaderLayout.html';
 //import '../imports/ui/pages/notFound.js';
 //import '../imports/ui/pages/contact.js';
 
-// Create index route
+// Create home route
 FlowRouter.route('/', {
   name: 'home',
+  action() {
+    this.render('mainLayout', 'home');
+  },
   waitOn() {
-    return import('../imports/client/home/home.js');
+    return import('/imports/client/home/home.js');
   },
   whileWaiting() {
     this.render('mainLayout', 'loading');
-  },
-  action() {
-    this.render('mainLayout', 'home');
   }
+});
+
+// 404 route (catch all)
+FlowRouter.route('*', {
+  action() {
+    this.render('notFound');
+  },
 });
 
 // Create home route
@@ -75,9 +83,9 @@ FlowRouter.route('/about', {
   }
 });
 
-FlowRouter.route('*', {
+FlowRouter.route('/contact', {
   action() {
-    this.render('mainLayout', 'notFound');
+    this.render('contact');
   }
 });
 
