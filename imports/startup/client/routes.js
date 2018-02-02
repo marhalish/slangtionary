@@ -3,11 +3,30 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
 //import to load these templates
 // When the imports below are commented out, no imports load in main.js
-//import '../imports/ui/pages/home.js';
+import '/imports/ui/layouts/mainLayout.js'
+import '/imports/ui/pages/home.js';
 //import '../imports/ui/pages/about.js';
 //import '../imports/ui/pages/notFound.js';
+//import '../imports/ui/pages/contact.js';
 
-FlowRouter.route('/home', {
+// Create index route
+FlowRouter.route('/', {
+  name: 'home',
+  waitOn() {
+    return [
+      import('/imports/ui/pages/home.js'),
+      import('/imports/ui/components/appHeaderLayout.html'),
+      import('/imports/ui/components/appFooterLayout.html')
+    ];
+  },
+  action() {
+    BlazeLayout.render('mainLayout', 'home', {
+      appHeader: 'appHeaderLayout',
+      appFooter: 'appFooterLayout'
+    });
+  }
+});
+/*FlowRouter.route('/', {
   name: 'home',
   action() {
     BlazeLayout.render('mainLayout', {
@@ -16,7 +35,18 @@ FlowRouter.route('/home', {
       appFooter: 'appFooterLayout'
     });
   }
-});
+});*/
+
+/*FlowRouter.route('/home', {
+  name: 'home',
+  action() {
+    BlazeLayout.render('mainLayout', {
+      appHeader: 'appHeaderLayout',
+      content: 'home',
+      appFooter: 'appFooterLayout'
+    });
+  }
+});*/
 
 FlowRouter.route('/about', {
   name: 'about',
@@ -34,7 +64,6 @@ FlowRouter.route('*', {
     BlazeLayout.render('notFound');
   }
 });
-
 
 // The routes below will be uncommented when routing is functional
 /* FlowRouter.route('/contact', {

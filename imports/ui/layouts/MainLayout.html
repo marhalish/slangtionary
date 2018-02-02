@@ -3,9 +3,16 @@
     <h2> Welcome to Slangtionary! </h2>
     <p> This project is currently under development. More information will be avilable soon</p>
   </div>
-  <main>
+
+  <nav>
     {{> Template.dynamic template=appHeader }}
-    {{> Template.dynamic template=content }}
-    {{> Template.dynamic template=appFooter }}
+  </nav>
+
+  <main>
+    {{> yield }}
   </main>
+
+  <footer>
+    {{> Template.dynamic template=appFooter }}
+  </footer>
 </template>
