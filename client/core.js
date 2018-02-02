@@ -4,7 +4,7 @@ import { FlowRouter }    from 'meteor/ostrio:flow-router-extra';
 import { ReactiveVar }       from 'meteor/reactive-var';
 
 
-import '/imports/client/layout/mainLayout.html';
+import '/imports/client/layout/_mainLayout.html';
 import '/imports/client/about/about.js';
 import '/imports/client/contact/contact.js';
 import '/imports/client/home/home.js';
