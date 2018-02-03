@@ -1,16 +1,5 @@
 import { Meteor }     from 'meteor/meteor';
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
-//import { BlazeLayout } from 'meteor/kadira:blaze-layout';
-
-//import to load these templates
-// When the imports below are commented out, no imports load in main.js
-//import '/imports/ui/layouts/mainLayout.js';
-//import '/imports/ui/pages/home.js';
-//import '/imports/client/loading/loading.html';
-//import '../imports/ui/pages/about.js';
-//import '/imports/client/misc/appHeaderLayout.html';
-//import '../imports/ui/pages/notFound.js';
-//import '../imports/ui/pages/contact.js';
 
 // Create home route
 FlowRouter.route('/', {
@@ -24,6 +13,33 @@ FlowRouter.route('/', {
   whileWaiting() {
     this.render('_mainLayout', 'loading');
   }
+});
+
+FlowRouter.route('/about', {
+  name: 'about',
+  waitOn() {
+    return import('/imports/client/about/about.js');
+  },
+  whileWaiting() {
+    this.render('_mainLayout', 'loading');
+  },
+  action() {
+    this.render('_mainLayout', 'about');
+  },
+});
+
+
+FlowRouter.route('/contact', {
+  name: 'contact',
+  waitOn() {
+    return import('/imports/client/contact/contact.js');
+  },
+  whileWaiting() {
+    this.render('_mainLayout', 'loading');
+  },
+  action() {
+    this.render('_mainLayout', 'contact_slangtionary');
+  },
 });
 
 // 404 route (catch all)

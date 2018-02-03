@@ -75,7 +75,7 @@
   }
   .mainContent {
     background-color:#EEE;
-    min-height:900px;
+    /*min-height:900px;*/
     padding:2px;
     overflow:hidden;
   }

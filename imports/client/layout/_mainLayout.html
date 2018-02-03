@@ -1,26 +1,9 @@
-<body>
-  {{> _mainLayout }}
-</body>
-
 <template name="_mainLayout">
   <div class="mainContent">
     <h2> Welcome to Slangtionary! </h2>
     <p> This project is currently under development. More information will be avilable soon</p>
   </div>
 
-  {{ yield }}
+  {{> yield }}
 
-<!--
-  <nav>
-    {{> appHeader }}
-  </nav>
--->
-<!--
-  <main>
-    {{> yield }}
-  </main>
-  <footer>
-    {{> appFooter }}
-  </footer>
--->
 </template>
